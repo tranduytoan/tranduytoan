@@ -64,6 +64,6 @@ jobs:
 
           plugin_traffic: yes
 
-          plugin_steam: yes
           plugin_steam_token: ${{ secrets.STEAM_TOKEN }}
-          plugin_steam_user: 76561199037473758
+          plugin_steam: yes
+          plugin_steam_user: "76561199037473758"
