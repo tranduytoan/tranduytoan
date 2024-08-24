@@ -13,7 +13,7 @@ jobs:
           committer_gist: ${{ secrets.GIST }}
           filename: tranduytoan.svg
           output_action: gist
-          config_display: columns
+          config_display: large
           config_timezone: Asia/Bangkok
           repositories_forks: yes
 
