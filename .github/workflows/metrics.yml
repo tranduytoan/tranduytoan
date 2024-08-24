@@ -21,7 +21,7 @@ jobs:
 
           plugin_achievements: yes
           plugin_achievements_display: detailed
-          plugin_achievements_threshold: X
+          plugin_achievements_threshold: C
 
           plugin_activity: yes
           plugin_activity_days: 14
@@ -57,14 +57,6 @@ jobs:
 
           plugin_lines: yes
 
-          plugin_reactions: yes
-          plugin_reactions_display: absolute
-          plugin_reactions_ignored: github-actions[bot], dependabot[bot], dependabot-preview[bot]
-          plugin_reactions_limit: 200
-          plugin_reactions_limit_issues: 100
-
-          plugin_stargazers: yes
-
           plugin_topics: yes
           plugin_topics_limit: 15
           plugin_topics_mode: starred
@@ -72,5 +64,6 @@ jobs:
 
           plugin_traffic: yes
 
-          plugin_pagespeed: yes
-          plugin_pagespeed_detailed: yes
+          plugin_steam: yes
+          plugin_steam_token: ${{ secrets.STEAM_TOKEN }}
+          plugin_steam_user: 76561199037473758
