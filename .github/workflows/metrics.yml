@@ -7,28 +7,44 @@ jobs:
   github-metrics:
     runs-on: ubuntu-latest
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: General
+        uses: lowlighter/metrics@latest
         with:
+          filename: general.svg
           token: ${{ secrets.METRICS_TOKEN }}
           committer_gist: ${{ secrets.GIST }}
-          filename: tranduytoan.svg
           output_action: gist
-          config_display: large
           config_timezone: Asia/Bangkok
           repositories_forks: yes
+          config_order: base.header, introduction, base.activity, base.repositories, isocalendar, languages, followup, habits, notable, topics
 
           base: header, activity, repositories
+          base_indepth: yes
 
-          plugin_achievements: yes
-          plugin_achievements_display: detailed
-          plugin_achievements_threshold: C
+          plugin_introduction: yes
+          plugin_introduction_title: yes
 
-          plugin_activity: yes
-          plugin_activity_days: 14
-          plugin_activity_filter: all
-          plugin_activity_limit: 5
-          plugin_activity_load: 300
-          plugin_activity_visibility: all
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: half-year
+
+          plugin_languages: yes
+          plugin_languages_sections: most-used, recently-used
+          plugin_languages_threshold: 0%
+          plugin_languages_indepth: yes
+          plugin_languages_details: lines, bytes-size, percentage
+
+          plugin_topics: yes
+          plugin_topics_limit: 15
+          plugin_topics_mode: icons
+
+          plugin_notable: yes
+
+          # plugin_activity: yes
+          # plugin_activity_days: 14
+          # plugin_activity_filter: all
+          # plugin_activity_limit: 5
+          # plugin_activity_load: 300
+          # plugin_activity_visibility: all
 
           plugin_followup: yes
           plugin_followup_sections: repositories
@@ -39,31 +55,29 @@ jobs:
           plugin_habits_from: 200
           plugin_habits_trim: yes
 
-          plugin_introduction: yes
-          plugin_introduction_title: yes
-
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: half-year
-
-          plugin_languages: yes
-          plugin_languages_categories: markup, programming
-          plugin_languages_colors: github
-          plugin_languages_limit: 16
-          plugin_languages_recent_categories: markup, programming
-          plugin_languages_recent_days: 14
-          plugin_languages_recent_load: 300
-          plugin_languages_sections: most-used
-          plugin_languages_threshold: 0%
-
           plugin_lines: yes
-
-          plugin_topics: yes
-          plugin_topics_limit: 15
-          plugin_topics_mode: starred
-          plugin_topics_sort: stars
-
           plugin_traffic: yes
 
-          plugin_steam_token: ${{ secrets.STEAM_TOKEN }}
+      - name: Achievements
+        uses: lowlighter/metrics@latest
+        with:
+          filename: achievements.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_gist: ${{ secrets.GIST }}
+          output_action: gist
+          base: ""
+          plugin_achievements: yes
+          plugin_achievements_display: detailed
+          plugin_achievements_threshold: C
+          plugin_fortune: yes
+
+      - name: Social
+        uses: lowlighter/metrics@latest
+        with:
+          filename: social.svg
+          committer_gist: ${{ secrets.GIST }}
+          output_action: gist
+          base: ""
           plugin_steam: yes
+          plugin_steam_token: ${{ secrets.STEAM_TOKEN }}
           plugin_steam_user: "76561199037473758"
