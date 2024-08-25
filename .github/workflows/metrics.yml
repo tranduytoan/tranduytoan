@@ -75,6 +75,7 @@ jobs:
         uses: lowlighter/metrics@latest
         with:
           filename: social.svg
+          token: ${{ secrets.METRICS_TOKEN }}
           committer_gist: ${{ secrets.GIST }}
           output_action: gist
           base: ""
