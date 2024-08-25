@@ -57,7 +57,7 @@ jobs:
           plugin_lines: yes
           plugin_traffic: yes
 
-          config_order: base.header, introduction, base.activity, base.repositories, isocalendar, languages, followup, habits, notable, topics
+          # config_order: base.header, introduction, base.activity, base.repositories, isocalendar, languages, followup, habits, notable, topics
 
       - name: Achievements
         uses: lowlighter/metrics@latest
