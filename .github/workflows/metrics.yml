@@ -61,18 +61,14 @@ jobs:
 
           # config_order: base.header, introduction, base.activity, base.repositories, isocalendar, languages, followup, habits, notable, topics
 
-      - name: Achievements
-        uses: lowlighter/metrics@latest
-        with:
-          filename: achievements.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          committer_gist: ${{ secrets.GIST }}
-          output_action: gist
-          base: ""
-          plugin_achievements: yes
-          plugin_achievements_display: detailed
-          plugin_achievements_threshold: C
-          plugin_fortune: yes
+      # - name: Achievements
+      #   uses: stalomeow/metrics@edcae0f874d69e509d25ddd5e750a2f41cd54e10
+      #   with:
+      #     filename: achievements.svg
+      #     token: ${{ secrets.METRICS_TOKEN }}
+      #     committer_gist: ${{ secrets.GIST }}
+      #     output_action: gist
+      #     plugin_achievements: yes
 
       - name: Social
         uses: lowlighter/metrics@latest
@@ -81,7 +77,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           committer_gist: ${{ secrets.GIST }}
           output_action: gist
-          base: ""
+          plugin_fortune: yes
           plugin_steam: yes
           plugin_steam_token: ${{ secrets.STEAM_TOKEN }}
           plugin_steam_user: "76561199037473758"
