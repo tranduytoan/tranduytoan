@@ -64,7 +64,7 @@ jobs:
       - name: Achievements
         uses: stalomeow/metrics@projects-v2
         with:
-          filename: achievementsV2.svg
+          filename: achievements.svg
           token: ${{ secrets.METRICS_TOKEN }}
           committer_gist: ${{ secrets.GIST }}
           output_action: gist
