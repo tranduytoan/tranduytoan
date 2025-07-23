@@ -61,14 +61,14 @@ jobs:
 
           # config_order: base.header, introduction, base.activity, base.repositories, isocalendar, languages, followup, habits, notable, topics
 
-      # - name: Achievements
-      #   uses: stalomeow/metrics@edcae0f874d69e509d25ddd5e750a2f41cd54e10
-      #   with:
-      #     filename: achievements.svg
-      #     token: ${{ secrets.METRICS_TOKEN }}
-      #     committer_gist: ${{ secrets.GIST }}
-      #     output_action: gist
-      #     plugin_achievements: yes
+      - name: Achievements
+        uses: stalomeow/metrics@projects-v2
+        with:
+          filename: achievementsV2.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_gist: ${{ secrets.GIST }}
+          output_action: gist
+          plugin_achievements: yes
 
       - name: Social
         uses: lowlighter/metrics@latest
