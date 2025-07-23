@@ -68,6 +68,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           committer_gist: ${{ secrets.GIST }}
           output_action: gist
+          base: ""
           plugin_achievements: yes
 
       - name: Social
@@ -77,6 +78,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           committer_gist: ${{ secrets.GIST }}
           output_action: gist
+          base: ""
           plugin_fortune: yes
           plugin_steam: yes
           plugin_steam_token: ${{ secrets.STEAM_TOKEN }}
